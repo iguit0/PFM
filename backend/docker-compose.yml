@@ -1,0 +1,38 @@
+version: '3'
+services:
+  api:
+    build: .
+    ports:
+      - "4000:4000"
+    environment: 
+      PRISMA_ENDPOINT: http://prisma:4466
+      JWT_SECRET: ${JWT_SECRET}
+    command: yarn dev
+    volumes:
+      - .:/usr/app                 
+  prisma:
+    image: prismagraphql/prisma:1.28
+    restart: always
+    ports:
+    - "4466:4466"
+    environment:
+      PRISMA_CONFIG: |
+        port: 4466
+        databases:
+          default:
+            connector: postgres
+            host: postgres
+            port: 5432
+            user: prisma
+            password: prisma
+            migrations: true
+  postgres:
+    image: postgres:10.3
+    restart: always
+    environment:
+      POSTGRES_USER: prisma
+      POSTGRES_PASSWORD: prisma
+    volumes:
+      - postgres:/var/lib/postgresql/data
+volumes:
+  postgres:
