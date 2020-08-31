@@ -20,14 +20,14 @@ type Category {
   id: ID! @unique
   user: User
   description: String!
-  operarion: Operation!
+  operation: Operation!
 }
 
 type Record {
   id: ID! @unique
   user: User!
+  account: Account!
   category: Category!
-  account: Account! 
   amount: Float!
   type: Operation!
   date: DateTime!

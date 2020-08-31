@@ -1,5 +1,5 @@
-const Query = require('./Query.js')
-const Mutation = require('./Mutation.js')
+const Query = require('./Query')
+const Mutation = require('./Mutation')
 
 module.exports = {
   Query,

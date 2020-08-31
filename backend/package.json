@@ -1,30 +1,25 @@
 {
   "name": "backend",
-  "version": "0.0.1",
-  "description": "Backend for PFM app",
-  "private": true,
-  "author": {
-    "name": "Igor Lucio",
-    "email": "igorsk89@gmail.com",
-    "url": "https://github.com/iguit0"
-  },
-  "repository": "github:iguit0/PFM",
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npx nodemon --delay 1000ms --ext js,graphql src/index",
-    "start": "node src/index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx pm2-runtime src/index.js",
+    "dev": "npx nodemon --delay 1000ms --ext js,graphql src/index"
   },
-  "keywords": ["javascript", "graphql", "prisma", "prisma-client", "graphql-yoga"],
-  "license": "MIT",
-  "devDependencies": {
-    "graphql-yoga": "1.17.4",
-    "nodemon": "1.18.10",
-    "prisma-binding": "2.3.16",
-    "prisma-client-lib": "1.28.3"
-  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "2.4.3",
-    "jsonwebtoken": "8.5.0"
+    "graphql-yoga": "1.17.4",
+    "jsonwebtoken": "8.5.0",
+    "moment": "2.24.0",
+    "pm2": "^3.5.1",
+    "prisma-binding": "2.3.8",
+    "prisma-client-lib": "1.28.3"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
   }
 }
